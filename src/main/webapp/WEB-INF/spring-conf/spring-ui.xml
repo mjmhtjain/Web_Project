@@ -9,6 +9,8 @@
      http://www.springframework.org/schema/mvc
      http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
+	<import resource="spring-db.xml" />
+
 	<!-- Step 3: Add support for component scanning -->
 	<context:component-scan base-package="com.spring" />
 
@@ -25,8 +27,22 @@
 	<!-- Step 6: Resource Mapping -->
 	<mvc:resources mapping="/WEB-INF/view/**" location="/WEB-INF/view/"
 		cache-period="31556926" />
-		
-	<import resource="spring-db.xml"/>
-	
+
+
+
+	<bean
+		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				<ref bean="jsonMessageConverter" />
+			</list>
+		</property>
+	</bean>
+
+	<!-- Configure bean to convert JSON to POJO and vice versa -->
+	<bean id="jsonMessageConverter"
+		class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+	</bean>
+
 </beans>
      

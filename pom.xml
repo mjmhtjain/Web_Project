@@ -1,8 +1,7 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                       http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	
+
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.spring.exp</groupId>
 	<artifactId>SpringExp</artifactId>
@@ -19,10 +18,10 @@
 		<junit.version>4.11</junit.version>
 		<logback.version>1.0.13</logback.version>
 		<jcl-over-slf4j.version>1.7.5</jcl-over-slf4j.version>
-		
+
 		<!-- SPRING & HIBERNATE / JPA -->
 		<hibernate.version>4.1.9.Final</hibernate.version>
-		
+
 	</properties>
 
 	<!-- DEPENDENCIES -->
@@ -72,8 +71,8 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-		
-		<!-- Spring ORM (for DB)-->
+
+		<!-- Spring ORM (for DB) -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
@@ -84,14 +83,14 @@
 			<artifactId>spring-orm</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-		
+
 		<!-- JPA Vendor -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
 			<version>${hibernate.version}</version>
 		</dependency>
-		
+
 		<!-- Oracle driver package for db connection -->
 		<dependency>
 			<groupId>com.oracle</groupId>
@@ -118,6 +117,13 @@
 
 	</dependencies>
 
+	<repositories>
+		<repository>
+			<id>codelds</id>
+			<url>https://code.lds.org/nexus/content/groups/main-repo</url>
+		</repository>
+	</repositories>
+
 
 	<build>
 		<finalName>SpringExp</finalName>
@@ -134,6 +140,6 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		
+
 	</build>
 </project>

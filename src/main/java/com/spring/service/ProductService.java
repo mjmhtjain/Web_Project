@@ -13,35 +13,35 @@ import com.spring.util.EntityToDTOConverter;
 
 @Component
 public class ProductService {
-
-	@Autowired
-	private ProductDao productDao;
-	
-	
-//	@Transactional(readOnly = true)
-//	public List<ProductDTO> listAll() {
-//		List<Product> productList = null;
-//		List<ProductDTO> productDTOList = new ArrayList<ProductDTO>();
-//		
-//		productList = productDao.findAll();
-//		
-//		productList.stream().map(item -> EntityToDTOConverter.entityToDTOConverter(item)).forEach(item -> productDTOList.add(item));
-//		return productDTOList.isEmpty() ? null : productDTOList;
+//
+//	@Autowired
+//	private ProductDao productDao;
+//	
+//	
+////	@Transactional(readOnly = true)
+////	public List<ProductDTO> listAll() {
+////		List<Product> productList = null;
+////		List<ProductDTO> productDTOList = new ArrayList<ProductDTO>();
+////		
+////		productList = productDao.findAll();
+////		
+////		productList.stream().map(item -> EntityToDTOConverter.entityToDTOConverter(item)).forEach(item -> productDTOList.add(item));
+////		return productDTOList.isEmpty() ? null : productDTOList;
+////	}
+//	
+//	@Transactional
+//	public void persistAddress(){
+//		productDao.insertAddress();
 //	}
-	
-	@Transactional
-	public void persistAddress(){
-		productDao.insertAddress();
-	}
-	
-	@Transactional
-	public void sessionFactAddress(){
-		productDao.sessionFactoryQuery();
-	}
-	
-	@Transactional
-	public void insertEmployee(){
-		productDao.insertEmployee();
-	}
-	
+//	
+//	@Transactional
+//	public void sessionFactAddress(){
+//		productDao.sessionFactoryQuery();
+//	}
+//	
+//	@Transactional
+//	public void insertEmployee(){
+//		productDao.insertEmployee();
+//	}
+//	
 }
