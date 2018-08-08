@@ -1,9 +1,20 @@
 package com.spring.dto;
 
+import java.util.List;
+
 public class BillHistoryDTO {
 	private Long id;
 	private String custName;
 	private String txnTime;
+	private List<ProductListDTO> productList;
+
+	public List<ProductListDTO> getProductList() {
+		return productList;
+	}
+
+	public void setProductList(List<ProductListDTO> productList) {
+		this.productList = productList;
+	}
 
 	public Long getId() {
 		return id;

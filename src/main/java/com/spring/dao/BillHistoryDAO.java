@@ -10,17 +10,27 @@ import com.spring.entity.BillHistory;
 
 @Repository
 public class BillHistoryDAO {
-	
+
 	@PersistenceContext
 	private EntityManager em;
-	
-	public BillHistory insertBill(BillHistory bill){
-		
+
+	public BillHistory insertBill(BillHistory bill) {
+
 		em.persist(bill);
-		
-		if(null != bill && bill.getId() != 0){
+
+		if (null != bill && bill.getId() != 0) {
 			bill = em.find(BillHistory.class, bill.getId());
 		}
+		return bill;
+	}
+
+	public BillHistory findBillById(long id) {
+		BillHistory bill = null;
+
+		if (id != 0) {
+			bill = em.find(BillHistory.class, id);
+		}
+
 		return bill;
 	}
 }

@@ -17,6 +17,7 @@ import com.spring.beans.HeroWrapper;
 import com.spring.dto.BillHistoryDTO;
 import com.spring.dto.ProductDTO;
 import com.spring.service.BillHistoryService;
+import com.spring.service.ProductListService;
 import com.spring.service.ProductService;
 
 @Controller
@@ -24,6 +25,9 @@ public class SpringController {
 
 	@Autowired
 	private BillHistoryService billHistoryService;
+
+	@Autowired
+	private ProductListService productListService;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String welcome(Model model) {
@@ -43,37 +47,12 @@ public class SpringController {
 		System.out.println(newBill);
 		return "Testing newBill";
 	}
-//
-//	@RequestMapping(value = "/testing/{id}", method = RequestMethod.GET)
-//	@ResponseBody
-//	public String testMethod(@PathVariable("id") Long id) {
-//		return "Hello testing ... " + id;
-//	}
-//
-//	@RequestMapping(value = "/fetch-heroes", method = RequestMethod.GET)
-//	@ResponseBody
-//	public HeroWrapper fetchHeroes() {
-//
-//		HeroWrapper heroes = new HeroWrapper();
-//		return heroes;
-//	}
-//	
-//	@RequestMapping(value = "/insert", method = RequestMethod.GET)
-//	@ResponseBody
-//	public String insertExp() {
-//
-//		productService.sessionFactAddress();
-//		
-//		return "SUCCESS";
-//	}
-//	
-//	@RequestMapping(value = "/insert/emp", method = RequestMethod.GET)
-//	@ResponseBody
-//	public String insertEmployee() {
-//
-//		productService.insertEmployee();
-//		
-//		return "SUCCESS";
-//	}
-	
+
+	@RequestMapping(value = "/insert/products", method = RequestMethod.POST)
+	@ResponseBody
+	public BillHistoryDTO testMethod(@RequestBody BillHistoryDTO billDTO) {
+		BillHistoryDTO response = productListService.addProductsToBill(billDTO);
+		return response;
+	}
+
 }

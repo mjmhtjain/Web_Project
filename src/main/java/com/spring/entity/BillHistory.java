@@ -28,7 +28,7 @@ public class BillHistory implements Serializable {
 	private Timestamp txnTime;
 
 	// bi-directional many-to-one association to ProductList
-	@OneToMany(mappedBy = "billHistory")
+	@OneToMany(mappedBy = "billHistory", cascade = CascadeType.PERSIST)
 	private List<ProductList> productLists;
 
 	public BillHistory() {
